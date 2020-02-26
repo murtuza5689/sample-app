@@ -1,0 +1,9 @@
+sudo: required
+services:
+ - docker
+
+before-install:
+ - docker  build -t murtuza5689/sample-app -f Dockerfile.dev .
+
+script:
+ - docker run -t murtuza5689/sample-app npm run test -- --coverage
